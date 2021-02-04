@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "246508299445",
+    "project_id": "gadjet-inventory",
+    "storage_bucket": "gadjet-inventory.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246508299445:android:c90574eabfbcc5c8b34afc",
+        "android_client_info": {
+          "package_name": "com.cgg.gadjet_inventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246508299445-ed9r5mrcaakhh4jbbjdgrqti5hk7574f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD729rA5gTHbVa1Nf7NJuPg2KJvgKuC-0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246508299445-ed9r5mrcaakhh4jbbjdgrqti5hk7574f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
