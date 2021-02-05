@@ -1385,11 +1385,11 @@ var _todoDateController = TextEditingController();
                     );
 
 
-                      auth.currentUser().then((value) {
-                        Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                                builder: (BuildContext context) => ListTiles()));
-                      });
+                      // auth.currentUser().then((value) {
+                      //   Navigator.of(context).pushReplacement(
+                      //       MaterialPageRoute(
+                      //           builder: (BuildContext context) => ListTiles()));
+                      // });
                     }
 
 
@@ -1518,67 +1518,67 @@ var _todoDateController = TextEditingController();
 
 
       String PDFPath = 'DeviceDocs/WCDocs${DateTime.now()}.pdf';
-      final StorageReference  _storagepdf1reference   = FirebaseStorage().ref().child(PDFPath);
+      // final StorageReference  _storagepdf1reference   = FirebaseStorage().ref().child(PDFPath);
 
 
 
-      StorageUploadTask uploadTask4 = _storagepdf1reference.putFile(PDfFile1);
-      StorageTaskSnapshot downloadPDFUrl = (await uploadTask4.onComplete);
+      // StorageUploadTask uploadTask4 = _storagepdf1reference.putFile(PDfFile1);
+      // StorageTaskSnapshot downloadPDFUrl = (await uploadTask4.onComplete);
    //   String pdf1url = (await downloadPDFUrl.ref.getDownloadURL());
 
 
-      var wcpdfUrl = await (await uploadTask4.onComplete).ref.getDownloadURL();
+      // var wcpdfUrl = await (await uploadTask4.onComplete).ref.getDownloadURL();
       String pdf1url = wcpdfUrl.toString();
 
 
 
 
       String PDF2Path = 'DeviceDocs/UGDocs${DateTime.now()}.pdf';
-      final StorageReference  _storagepdf2reference   = FirebaseStorage().ref().child(PDF2Path);
-
-
-
-      StorageUploadTask uploadTask5 = _storagepdf2reference.putFile(PDfFile2);
-      StorageTaskSnapshot downloadPDFUrl2 = (await uploadTask5.onComplete);
-      var ugpdfUrl = await (await uploadTask5.onComplete).ref.getDownloadURL();
+      // final StorageReference  _storagepdf2reference   = FirebaseStorage().ref().child(PDF2Path);
+      //
+      //
+      //
+      // StorageUploadTask uploadTask5 = _storagepdf2reference.putFile(PDfFile2);
+      // StorageTaskSnapshot downloadPDFUrl2 = (await uploadTask5.onComplete);
+      // var ugpdfUrl = await (await uploadTask5.onComplete).ref.getDownloadURL();
       String pdf2url =ugpdfUrl.toString();
 
 
 
 
       String UGImagesPath = 'DeviceImages/DeviceImage${DateTime.now()}.jpg';
-      final StorageReference  _reference3    = FirebaseStorage().ref().child(UGImagesPath);
+      // final StorageReference  _reference3    = FirebaseStorage().ref().child(UGImagesPath);
+      //
+      // StorageUploadTask uploadTask3 = _reference3.putFile(imageFile3);
 
-      StorageUploadTask uploadTask3 = _reference3.putFile(imageFile3);
-
-      var ugimgUrl = await (await uploadTask3.onComplete).ref.getDownloadURL();
+      // var ugimgUrl = await (await uploadTask3.onComplete).ref.getDownloadURL();
       String ugurl = ugimgUrl.toString();
 
 
 
 
       String WCImagesPath = 'DeviceImages/DeviceImage${DateTime.now()}.jpg';
-      final StorageReference  _reference2    = FirebaseStorage().ref().child(WCImagesPath);
+      // final StorageReference  _reference2    = FirebaseStorage().ref().child(WCImagesPath);
 
      /* StorageReference _reference3 = FirebaseStorage.instance.ref().child(
           "ugimages")
           .child(new DateTime.now().millisecondsSinceEpoch.toString() + "." +
           imageFile3.path);*/
 
-      StorageUploadTask uploadTask2 = _reference2.putFile(imageFile2);
+      // StorageUploadTask uploadTask2 = _reference2.putFile(imageFile2);
 
-      var wcimgUrl = await (await uploadTask2.onComplete).ref.getDownloadURL();
+      // var wcimgUrl = await (await uploadTask2.onComplete).ref.getDownloadURL();
       String wcurl = wcimgUrl.toString();
 
 
       String ImagesPath = 'DeviceImages/DeviceImage${DateTime.now()}.jpg';
-      final StorageReference _reference    = FirebaseStorage().ref().child(ImagesPath);
+      // final StorageReference _reference    = FirebaseStorage().ref().child(ImagesPath);
 
 
 
-      StorageUploadTask uploadTask = _reference.putFile(imageFile);
+      // StorageUploadTask uploadTask = _reference.putFile(imageFile);
 
-      var imgUrl = await (await uploadTask.onComplete).ref.getDownloadURL();
+      // var imgUrl = await (await uploadTask.onComplete).ref.getDownloadURL();
       String url = imgUrl.toString();
       DatabaseReference databaseReference = FirebaseDatabase.instance
           .reference().child("Data");

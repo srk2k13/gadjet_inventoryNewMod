@@ -1,6 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:gadjet_inventory/Form/ListTiles.dart';
 import 'package:gadjet_inventory/Form/UploadData.dart';
+import 'package:gadjet_inventory/Screens/HomePage.dart';
 import 'package:gadjet_inventory/item_details.dart';
 import 'package:gadjet_inventory/sub_category_page.dart';
 import 'add_category.dart';
@@ -13,9 +15,11 @@ import 'items_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final dir = await getApplicationDocumentsDirectory();
-  Hive.init(dir.path);
-  registerAdapters();
+
+  await Firebase.initializeApp();
+  // final dir = await getApplicationDocumentsDirectory();
+  // Hive.init(dir.path);
+  // registerAdapters();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(MyApp());
 }
@@ -25,22 +29,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<ViewModel>(
-          create: (context) => ViewModel(),
-        )
-      ],
-      child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          initialRoute: '/',
-          routes: {
-            // When navigating to the "/" route, build the FirstScreen widget.
-            '/': (context) => MyHomePage(),
-
-            //home: MyHomePage(),
-          }),
+    return MaterialApp(
+      title: 'gadjet',
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+      ),
+      home: HomePageScreen(),
     );
+    // return MultiProvider(
+    //   providers: [
+    //     ChangeNotifierProvider<ViewModel>(
+    //       create: (context) => ViewModel(),
+    //     )
+    //   ],
+    //   child: MaterialApp(
+    //     home: HomePageScreen(),
+    //       debugShowCheckedModeBanner: false,
+    //       // initialRoute: '/',
+    //       // routes: {
+    //       //   // When navigating to the "/" route, build the FirstScreen widget.
+    //       //   '/': (context) => HomePageScreen(),
+    //
+    //         //home: MyHomePage(),
+    //       }),
+    // );
   }
 }
 

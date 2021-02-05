@@ -50,7 +50,7 @@ class _DetailViewState extends State<DetailView> {
 
     DatabaseReference referenceData = FirebaseDatabase.instance.reference()
         .child("Data");
-    referenceData.once().then((DataSnapshot dataSnapShot) {
+    referenceData.once().then((DataSnapshot dataSnapShot) async {
       dataList.clear();
       favList.clear();
 
@@ -82,23 +82,23 @@ class _DetailViewState extends State<DetailView> {
           //key is the uploadid
         );
         dataList.add(data);
-        auth.currentUser().then((value) {
-          DatabaseReference reference = FirebaseDatabase.instance.reference()
-              .child("Data").child(key).child("Fav")
-              .child(value.uid)
-              .child("state");
-          reference.once().then((DataSnapshot snapShot) {
-            if (snapShot.value != null) {
-              if (snapShot.value == "true") {
-                favList.add(true);
-              } else {
-                favList.add(false);
-              }
-            } else {
-              favList.add(false);
-            }
-          });
-        });
+        // await auth.currentUser.then((value) {
+        //   DatabaseReference reference = FirebaseDatabase.instance.reference()
+        //       .child("Data").child(key).child("Fav")
+        //       .child(value.uid)
+        //       .child("state");
+        //   reference.once().then((DataSnapshot snapShot) {
+        //     if (snapShot.value != null) {
+        //       if (snapShot.value == "true") {
+        //         favList.add(true);
+        //       } else {
+        //         favList.add(false);
+        //       }
+        //     } else {
+        //       favList.add(false);
+        //     }
+        //   });
+        // });
       }
 
 

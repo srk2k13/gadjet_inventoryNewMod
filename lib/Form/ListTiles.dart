@@ -75,21 +75,21 @@ class _ListTilesState extends State<ListTiles> {
           //key is the uploadid
         );
         dataList.add(data);
-        auth.currentUser().then((value) {
-          DatabaseReference reference = FirebaseDatabase.instance.reference().child("Data").child(key).child("Fav")
-              .child(value.uid).child("state");
-          reference.once().then((DataSnapshot snapShot){
-            if(snapShot.value!=null){
-              if(snapShot.value=="true"){
-                favList.add(true);
-              }else{
-                favList.add(false);
-              }
-            }else{
-              favList.add(false);
-            }
-          });
-        });
+        // auth.currentUser().then((value) {
+        //   DatabaseReference reference = FirebaseDatabase.instance.reference().child("Data").child(key).child("Fav")
+        //       .child(value.uid).child("state");
+        //   reference.once().then((DataSnapshot snapShot){
+        //     if(snapShot.value!=null){
+        //       if(snapShot.value=="true"){
+        //         favList.add(true);
+        //       }else{
+        //         favList.add(false);
+        //       }
+        //     }else{
+        //       favList.add(false);
+        //     }
+        //   });
+        // });
 
       }
 
